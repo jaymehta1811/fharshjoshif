@@ -1,0 +1,42 @@
+body {
+    /* background: url('./car.png') no-repeat center center fixed; */
+    background-size: cover;
+}
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+}
+.glass {
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.glass:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+.btn::after {
+    content: '';
+    position: absolute;
+    left: -75px;
+    top: -50px;
+    height: 155px;
+    width: 30px;
+    background: #fff;
+    opacity: .8;
+    transform: rotate(35deg);
+    transition: all 1s cubic-bezier(.175, .52, .165, 1);
+    z-index: 1;
+}
+.btn:hover::after {
+    opacity: 0;
+    left: 120%;
+    transform: rotate(40deg);
+}
